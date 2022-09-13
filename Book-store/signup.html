@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+  <!-- Fonts...... -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet" />
+
+  <!-- Google icons  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="js/cart.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+</head>
+
+<body>
+
+  <!-- Modal -->
+  <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="show-cart table"></table>
+          <div>Total price: $<span class="total-cart"></span></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary" id='order-now'>Order now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <nav class="nav-bar">
+    <div class="nav1">
+      <img src="images/logo.png" width="120px" height="80px" />
+    </div>
+    <div class="icon-about">
+      <a href="booklistpage.html" style="border-left: 1px solid white">All Books</a>
+    </div>
+    <div class="icon-about">
+      <a href="contactus.html">Contact-Us</a>
+    </div>
+    <div class="icon-about">
+      <a href="aboutus.html">About-Us</a>
+    </div>
+    <div class="icon-about">
+      <a style="color: black; font-size: 18px" href="#">Sign-Up</a>
+    </div>
+    <div class="icon-about">
+      <i class="material-icons">
+        <span class="material-icons-outlined " data-toggle="modal" data-target="#cart">
+          shopping_cart
+        </span>
+      </i>
+      <a href="signin.html">Sign-in</a>
+    </div>
+  </nav>
+  <div class="fullcontent">
+    <div class="headings">
+      <h1>Sign Up</h1>
+      <h2>If you want to join our family , sign up now for free !!!</h2>
+    </div>
+    <div class="formbox">
+      <h3>Sign Up</h3>
+      <form id="form" action="#">
+        <div class="input-control">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" class="asd" />
+          <div class="error"></div>
+        </div>
+        <div class="input-control">
+          <label for="">Password</label>
+          <input type="password" id="password" name="password" class="asd" />
+          <div class="error"></div>
+        </div>
+        Gender :
+        <input type="radio" id="Male" name="gender" value="male" />
+        <label for="Male">Male</label><br />
+        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        <input type="radio" id="Female" name="gender" value="female" />
+        <label for="Female">Female</label><br /><br />
+        <label for="birthday">Birth Date:</label>
+        <input type="date" id="birthday" class="birthday" name="birth Date" /><br /><br />
+        Interest of books : <br /><br />
+        &nbsp &nbsp
+        <input type="checkbox" id="book1" name="book1" value="" />
+        <label for="book1"> Adventure</label><br />
+        &nbsp &nbsp
+        <input type="checkbox" id="book2" name="book2" value="" />
+        <label for="book2"> Drama</label><br />
+        &nbsp &nbsp
+        <input type="checkbox" id="book3" name="book3" value="" />
+        <label for="book3"> Horror</label><br />
+        <br />
+        <button type="reset" name="reset" class="mainbox">Reset</button>
+        <br />
+        <button type="submit" class="mainbox">Sign Up</button>
+        <br />
+        <label for="">Already a customer?</label>
+        <a href="signin.html" style="text-decoration: none">
+          <button class="mainbox" type="button">Sign In, Now.</button>
+        </a>
+      </form>
+    </div>
+  </div>
+  <script type="text/javascript">
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      validateInputs();
+    });
+
+    const setError = (element, message) => {
+      const inputControl = element.parentElement;
+      const errorDisplay = inputControl.querySelector(".error");
+
+      errorDisplay.innerText = message;
+      inputControl.classList.add("error");
+      inputControl.classList.remove("success");
+    };
+
+    const setSuccess = (element) => {
+      const inputControl = element.parentElement;
+      const errorDisplay = inputControl.querySelector(".error");
+
+      errorDisplay.innerText = "";
+      inputControl.classList.add("success");
+      inputControl.classList.remove("error");
+    };
+
+    const validateInputs = () => {
+      const usernameValue = username.value.trim();
+      const passwordValue = password.value.trim();
+      if (usernameValue === "") {
+        setError(username, "Username is required");
+      } else {
+        setSuccess(username);
+      }
+      var number = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+      if (passwordValue.match(number)) {
+        setSuccess(password);
+      } else if (passwordValue === '') {
+        setError(password, "Password is required.");
+      } else if (passwordValue.length < 8) {
+        setError(password, "Password must be at least 8 character.");
+      } else {
+        setError(password, "Uppercase & lowercase letter is required.");
+      }
+    };
+  </script>
+</body>
+
+<style>
+footer {
+  font-family: var(--secondfont);
+  background-color: rgba(20, 19, 19, 0.644);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: whitesmoke;
+  text-align: center;
+  font-size: small;
+}
+</style>
+<footer>&copy; Copyright 2021. All Rights Reserved by Lambton.</footer>
+
+</html>

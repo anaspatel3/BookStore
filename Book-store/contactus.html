@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+  <!-- Fonts...... -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet" />
+
+  <!-- Google icons  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="js/cart.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+</head>
+
+<body>
+
+  <!-- Modal -->
+  <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="show-cart table"></table>
+          <div>Total price: $<span class="total-cart"></span></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary" id='order-now'>Order now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <nav class="nav-bar">
+    <div class="nav1">
+      <img src="images/logo.png" width="120px" height="80px" />
+    </div>
+    <div class="icon-about">
+      <a href="booklistpage.html" style="border-left: 1px solid white">All Books</a>
+    </div>
+    <div class="icon-about">
+      <a href="#" style="color: black; font-size: 18px">Contact-Us</a>
+    </div>
+    <div class="icon-about">
+      <a href="aboutus.html">About-Us</a>
+    </div>
+    <div class="icon-about">
+      <a href="signup.html">Sign-Up</a>
+    </div>
+    <div class="icon-about">
+      <i class="material-icons">
+        <span class="material-icons-outlined " data-toggle="modal" data-target="#cart">
+          shopping_cart
+        </span>
+      </i>
+      <a href="signin.html">Sign-in</a>
+    </div>
+  </nav>
+  <div class="fullcontent">
+    <div class="headings">
+      <h1>Contact Us</h1>
+      <h2>
+        If you have any query/ suggestion/Message/ Question , Please let us
+        know by submitting the form!
+      </h2>
+    </div>
+    <br /><br />
+    <div class="formbox">
+      <h3>Contact Us</h3>
+      <form id="form" action="#">
+        <div class="input-control">
+          <label for="">What's your email id?</label>
+          <input type="text" name="email" id="email" class="asd" />
+          <div class="error"></div>
+        </div>
+        <div class="input-control">
+          <label for="message">Any Suggestion/ Message/ Question ?</label>
+          <textarea rows="4" type="text" id="message" name="message" class="asd">
+            </textarea>
+          <div class="error"></div>
+        </div>
+        <button type="submit" class="mainbox">Submit</button>
+      </form>
+    </div>
+  </div>
+  <script type="text/javascript">
+    const email = document.getElementById("email");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      validateInputs();
+    });
+
+    const setError = (element, message) => {
+      const inputControl = element.parentElement;
+      const errorDisplay = inputControl.querySelector(".error");
+
+      errorDisplay.innerText = message;
+      inputControl.classList.add("error");
+      inputControl.classList.remove("success");
+    };
+
+    const setSuccess = (element) => {
+      const inputControl = element.parentElement;
+      const errorDisplay = inputControl.querySelector(".error");
+
+      errorDisplay.innerText = "";
+      inputControl.classList.add("success");
+      inputControl.classList.remove("error");
+    };
+
+    const isValidEmail = (email) => {
+      const re =
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+    };
+
+    const validateInputs = () => {
+      const emailValue = email.value.trim();
+      const messageValue = message.value.trim();
+      if (emailValue === "") {
+        setError(email, "Email is required");
+      } else if (!isValidEmail(emailValue)) {
+        setError(email, "Provide a valid email address");
+      } else {
+        setSuccess(email);
+      }
+      if (messageValue === "") {
+        setError(message, "Message is required");
+      } else {
+        setSuccess(message);
+      }
+    };
+  </script>
+</body>
+<style>
+footer {
+  font-family: var(--secondfont);
+  background-color: rgba(20, 19, 19, 0.644);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: whitesmoke;
+  text-align: center;
+  font-size: small;
+}
+</style>
+<footer>&copy; Copyright 2021. All Rights Reserved by Lambton.</footer>
+
+</html>

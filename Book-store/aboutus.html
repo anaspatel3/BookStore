@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+  <!-- Fonts...... -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+
+  <!-- Google icons  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="js/cart.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+</head>
+
+<body>
+
+  <!-- Modal -->
+  <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="show-cart table"></table>
+          <div>Total price: $<span class="total-cart"></span></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary" id='order-now'>Order now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav-bar">
+    <div class="nav1">
+      <img src="images/logo.png" width="120px" height="80px">
+    </div>
+    <div class="icon-about">
+      <a href="booklistpage.html" style="border-left: 1px solid white;">All Books</a>
+    </div>
+    <div class="icon-about">
+      <a href="contactus.html">Contact-Us</a>
+    </div>
+    <div class="icon-about">
+      <a href="#" style="color: black;font-size:18px;">About-Us</a>
+    </div>
+    <div class="icon-about">
+      <a href="signup.html">Sign-Up</a>
+    </div>
+    <div class="icon-about">
+      <i class="material-icons">
+        <span class="material-icons-outlined " data-toggle="modal" data-target="#cart">
+          shopping_cart
+        </span>
+      </i>
+      <a href="signin.html">Sign-in</a>
+    </div>
+  </nav>
+
+  <div class="fullcontent">
+    <div class="headings">
+      <h1>About Us</h1>
+      <h2>Dear readers,
+        We offer tremendous gathering of books in various classification of Fiction, Non-fiction, Biographies, History,
+        Religions, Self – Help, Children.
+        We likewise move in immense accumulation of Investments and Management, Computers, Engineering, Medical, College
+        and School content references books proposed by
+        various foundations as schedule the nation over. Other than to this, we likewise offer an expansive gathering of
+        E-Books at reasonable valuing.
+        <a href="addbook.html">View Admin Panel Book Details</a>
+      </h2>
+      <br><br>
+
+      <div id='about-table'>
+        <table>
+          <tr>
+            <th>Genre of Book</th>
+            <th>Number of books</th>
+          </tr>
+          <tr>
+            <td>Adventure</td>
+            <td>123</td>
+          </tr>
+          <tr>
+            <td>Drama</td>
+            <td>789</td>
+          </tr>
+          <tr>
+            <td>Horror</td>
+            <td>445</td>
+          </tr>
+          <tr>
+            <td>Fiction</td>
+            <td>642</td>
+          </tr>
+          <tr>
+            <td>Fantasy</td>
+            <td>168</td>
+          </tr>
+          <tr>
+            <td>Romance</td>
+            <td>294</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</body>
+<style>
+  #about-table table,
+  td,
+  th {
+    border: 1px solid white;
+    border-collapse: collapse;
+    text-align: left;
+    padding: 8px;
+  }
+
+
+  #about-table table {
+    width: 100%;
+  }
+
+  #about-table th {
+    font-weight: 700px !important;
+    font-size: 1.5rem;
+  }
+
+  #about-table tr:nth-child(even) {
+    background-color: #dddddd;
+    color: black;
+  }
+
+  #about-table tr:nth-child(odd) {
+    color: white;
+  }
+</style>
+<style>
+footer {
+  font-family: var(--secondfont);
+  background-color: rgba(20, 19, 19, 0.644);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: whitesmoke;
+  text-align: center;
+  font-size: small;
+}
+</style>
+<footer>&copy; Copyright 2021. All Rights Reserved by Lambton.</footer>
+
+</html>

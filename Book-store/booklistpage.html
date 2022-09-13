@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book-Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+
+    <!-- Fonts...... -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Google icons  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/cart.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+</head>
+
+<body>
+    <!-- Modal -->
+    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="show-cart table"></table>
+                <div>Total price: $<span class="total-cart"></span></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary" id='order-now'>Order now</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="nav-bar">
+    <div class="nav1">
+        <img src="images/logo.png" width="120px" height="80px">
+    </div>
+    <div class="icon-about">
+        <a href="#" style="color: black; font-size: 18px">All Books</a>
+    </div>
+    <div class="icon-about">
+        <a href="contactus.html">Contact-Us</a>
+    </div>
+    <div class="icon-about">
+        <a href="aboutus.html">About-Us</a>
+    </div>
+    <div class="icon-about">
+        <a href="signup.html">Sign-Up</a>
+    </div>
+    <div class="icon-about">
+        <i class="material-icons">
+            <span class="material-icons-outlined " data-toggle="modal" data-target="#cart">
+                shopping_cart
+            </span>
+        </i>
+        <a href="signin.html">Sign-in</a>
+    </div>
+</nav>
+<div class="search-content">
+    <center>
+      <input id="bookSearch" type="text" style = "color: gray; border-color:yellow;border-radius:8px;"placeholder="Search..">
+    </center>
+</div><br>
+
+<div id="noData" style="display:none;">
+    <center>No data found</center>
+</div>
+
+<main class="flexDisplay">
+    <div class="books">
+        <div>
+          <img src="images/book1.jpg" alt="Big Magic" class="book-img">
+        </div>
+        <div class="descp">
+
+                <h2 class="book-name">Big Magic</h2>
+                <h3 class="author">by Elizabeth Gilbert</h3>
+                <h3 class="rating">1.987 rating</h3>
+                <div class="info">
+                  Readers of all ages and walks of life have drawn inspiration from Elizabeth
+                  Gilbert’s books.
+                </div>
+                <div class="more-details">
+                  Readers of all ages and walks of life have drawn inspiration and empowerment from Elizabeth Gilbert’s books
+                    for years. Gilbert offers insights
+                    into the mysterious nature of inspiration. She asks us to embrace our curiosity and let go of needless
+                    suffering. She shows us how to tackle what we most love,
+                    and how to face down what we most fear.
+                </div>
+                <div class="read-more">Read more</div>
+              <a href="detailspage.html"><button type="submit" id="b2"> See the Book</button></a>
+
+        </div>
+    </div>
+
+    <div class="books">
+        <div>
+             <img src="images/book2.jpg" alt="After You" class="book-img">
+        </div>
+        <div class="descp">
+              <h2 class="book-name">After You</h2>
+              <h3 class="author">by Jojo Myoes</h3>
+              <h3 class="rating">1.856 rating</h3>
+              <div class="info">
+                    It continues the story of Louisa Clark after Will's death. She is trying to move on.
+              </div>
+              <div class="more-details">
+                After You is a romance novel written by Jojo Moyes and is a sequel to Me Before You. The book was first
+                  published on 29 September 2015 in the  United Kingdom.   It continues the story of Louisa Clark after Will's death.
+                  She is trying to move on.A third novel in the series, Still Me, was published in January 2018..
+              </div>
+              <div class="read-more">Read more</div>
+            <a href="detailspage2.html">
+              <button type="submit" id="b2"> See the Book</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="books">
+        <div>
+           <img src="images/book3.jpg" alt="A Tale for the Time Being" class="book-img">
+        </div>
+        <div class="descp">
+            <h2 class="book-name">A Tale for the Time Being</h2>
+            <h3 class="author">by Ruth Ozeki</h3>
+            <h3 class="rating">1.954 rating</h3>
+            <div class="info">
+                In Tokyo, sixteen-year-old Nao has decided there’s only one escape from her aching loneliness
+            </div>
+            <div class="more-details">
+                 A Tale for the Time Being is a metafictional novel by Ruth Ozeki narrated by two characters, a
+                sixteen-year-old Japanese American girl living in Tokyowho keeps a diary, and a Japanese American writer living on an island
+                off the coast of British Columbia who finds the diary of the young woman washed ashore
+                some time after the 2011 tsunami that devastated Japan.
+            </div>
+            <div class="read-more">Read more</div>
+            <a href="detailspage3.html">
+              <button type="submit" id="b2"> See the Book</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="books">
+        <div>
+              <img src="images/book4.jpg" alt="The Great Gatsby" class="book-img">
+        </div>
+        <div class="descp">
+                <h2 class="book-name">The Great Gatsby</h2>
+                <h3 class="author">by F. Scott Fitzgerald</h3>
+                <h3 class="rating">1.987 rating</h3>
+                <div class="info">
+                  The novel was inspired by a youthful romance Fitzgerald had with socialite Ginevra King
+                </div>
+                <div class="more-details">
+                  The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island,
+                    near New York City, the novel depicts
+                    first-person narrator Nick Carraway 's interactions with mysterious millionaire Jay Gatsby and Gatsby's
+                    obsession to reunite with his former lover,
+                    Daisy Buchanan.
+                </div>
+                <div class="read-more">Read more</div>
+                <a href="detailspage4.html">
+                  <button type="submit" id="b2">See the Book</button>
+                </a>
+        </div>
+    </div>
+</main>
+</body>
+<script>
+    $(document).ready(function(){
+      $("#bookSearch").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".books").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+
+      $(".read-more").click( function() {
+          if($(this).parents().children('.read-more').text() == 'Read less'){
+            $(this).parents().children('.more-details').hide();
+            $(this).parents().children('.info').show();
+            $(this).parents().children('.read-more').text('Read more')
+          }
+          else{
+            $(this).parents().children('.more-details').show();
+            $(this).parents().children('.info').hide();
+            $(this).parents().children('.read-more').text('Read less')
+          }
+      });
+
+
+
+
+  });
+</script>
+<style>
+  .flexDisplay{
+    display: flex;
+  }
+   .nav-bar + .search-content {
+      padding-top: 102px;
+    }
+  .nav-bar{
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: white;
+  }
+
+  .read-more{
+    color:#a78784;
+  }
+  .more-details{
+    display: none;
+  }
+</style>
+
+<style>
+footer {
+  font-family: var(--secondfont);
+  background-color: rgba(20, 19, 19, 0.644);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: whitesmoke;
+  text-align: center;
+  font-size: small;
+}
+</style>
+<footer>&copy; Copyright 2021. All Rights Reserved by Lambton.</footer>
+
+</html>

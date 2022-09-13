@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+  <!-- Fonts...... -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet" />
+
+  <!-- Google icons  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Fonts...... -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet" />
+
+  <!-- Google icons  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="js/cart.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+  <style media="screen">
+    .rate {
+      float: right;
+      height: 46px;
+      padding: 0 10px;
+    }
+
+    .rate:not(:checked)>input {
+      position: absolute;
+      top: -9999px;
+    }
+
+    .rate:not(:checked)>label {
+      float: right;
+      width: 1em;
+      overflow: hidden;
+      white-space: nowrap;
+      cursor: pointer;
+      font-size: 30px;
+      color: #ccc;
+    }
+
+    .rate:not(:checked)>label:before {
+      content: '★ ';
+    }
+
+    .rate>input:checked~label {
+      color: #ffc700;
+    }
+
+    .rate:not(:checked)>label:hover,
+    .rate:not(:checked)>label:hover~label {
+      color: #deb217;
+    }
+
+    .rate>input:checked+label:hover,
+    .rate>input:checked+label:hover~label,
+    .rate>input:checked~label:hover,
+    .rate>input:checked~label:hover~label,
+    .rate>label:hover~input:checked~label {
+      color: #c59b08;
+
+    }
+
+    #rating {}
+  </style>
+</head>
+
+<body>
+
+  <!-- Modal -->
+  <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="show-cart table"></table>
+          <div>Total price: $<span class="total-cart"></span></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary" id='order-now'>Order now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <nav class="nav-bar">
+    <div class="nav1">
+      <img src="images/logo.png" width="120px" height="80px" />
+    </div>
+    <div class="icon-about">
+      <a href="booklistpage.html" style="border-left: 1px solid white">All Books</a>
+    </div>
+    <div class="icon-about">
+      <a href="contactus.html">Contact-Us</a>
+    </div>
+    <div class="icon-about">
+      <a href="#" style="color: black;font-size:18px;">About-Us</a>
+    </div>
+    <div class="icon-about">
+      <a href="signup.html">Sign-Up</a>
+    </div>
+    <div class="icon-about">
+      <i class="material-icons">
+        <span class="material-icons-outlined " data-toggle="modal" data-target="#cart">
+          shopping_cart
+        </span>
+      </i>
+      <a href="signin.html">Sign-in</a>
+    </div>
+  </nav>
+  <div class="fullcontent">
+    <div class="headings">
+      <h1>Add Book</h1>
+      <button class="mainbox" type="button" name="button" id="createButton">Create</button>
+      <table>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Rating</th>
+          <th>Short Description</th>
+          <th>Action</th>
+
+        </tr>
+        <tr>
+          <td>Big Magic</td>
+          <td>Elizabeth Gilbert</td>
+          <td>1.987</td>
+          <td>Readers of all ages and walks of life have drawn inspiration from Elizabeth
+            Gilbert’s books.</td>
+          <td><button class="mainbox" type="button" name="button">Edit</button><button type="button" class="mainbox"
+              name="button">Delete</button></td>
+        </tr>
+        <tr>
+          <td>After You</td>
+          <td>Jojo Myoes</td>
+          <td>1.856</td>
+          <td> It continues the story of Louisa Clark after Will's death. She is trying to move on. </td>
+          <td><button class="mainbox" type="button" name="button">Edit</button><button type="button" class="mainbox"
+              name="button">Delete</button></td>
+        </tr>
+        <tr>
+          <td>A tale for the Time Being</td>
+          <td>Ruth Ozeki</td>
+          <td>1.954</td>
+          <td> It continues the story of Louisa Clark after Will's death. She is trying to move on. </td>
+          <td><button class="mainbox" type="button" name="button">Edit</button><button type="button" class="mainbox"
+              name="button">Delete</button></td>
+        </tr>
+        <tr>
+          <td>The </td>
+          <td>Jojo Myoes</td>
+          <td>1.856</td>
+          <td> It continues the story of Louisa Clark after Will's death. She is trying to move on. </td>
+          <td><button class="mainbox" type="button" name="button">Edit</button><button class="mainbox" type="button"
+              name="button">Delete</button></td>
+        </tr>
+        <tr>
+          <td>The </td>
+          <td>Jojo Myoes</td>
+          <td>1.856</td>
+          <td> It continues the story of Louisa Clark after Will's death. She is trying to move on. </td>
+          <td><button class="mainbox" type="button" name="button">Edit</button><button class="mainbox" type="button"
+              name="button">Delete</button></td>
+        </tr>
+        <tr>
+          <td>The </td>
+          <td>Jojo Myoes</td>
+          <td>1.856</td>
+          <td> It continues the story of Louisa Clark after Will's death. She is trying to move on. </td>
+          <td><button class="mainbox" type="button" name="button">Edit</button><button class="mainbox" type="button"
+              name="button">Delete</button></td>
+        </tr>
+        <tr>
+          <td>The </td>
+          <td>Jojo Myoes</td>
+          <td>1.856</td>
+          <td> It continues the story of Louisa Clark after Will's death. She is trying to move on. </td>
+          <td><button class="mainbox" type="button" name="button">Edit</button><button class="mainbox" type="button"
+              name="button">Delete</button></td>
+        </tr>
+
+      </table>
+    </div>
+
+    <div class="formbox">
+      <h3>Add Book</h3>
+      <form id="form" action="#">
+        <div class="input-control">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" class="asd" />
+          <div class="error"></div>
+        </div>
+        <div class="input-control">
+          <label for="author">Author</label>
+          <input type="text" id="author" name="author" class="asd" />
+          <div class="error"></div>
+        </div>
+        <div class="input-control">
+          <label for="price">Price</label>
+          <input type="text" id="price" name="price" class="asd" />
+          <div class="error"></div>
+        </div>
+
+        <div class="input-control">
+          <label for="color">Color</label>
+          <input type="color" id="color" name="color" class="asd" value="#ff0000" />
+          <div class="error"></div>
+        </div>
+        <div class="input-control">
+          <label for="img">Image URL</label>
+          <input type="img" id="img" name="img" class="asd" />
+          <div class="error"></div>
+        </div>
+        <label for="lname" id="rating">Book Rating</label><br>
+        <div class="input-control">
+
+          <div class="rate">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text">1 star</label>
+          </div><br><br>
+        </div>
+        <div class="input-control">
+          <label for="message">Short Description</label>
+          <textarea rows="6" type="text" id="message" name="message" class="asd">
+            </textarea>
+          <div class="error"></div>
+        </div>
+        <br />
+        <button type="submit" class="mainbox">Add</button>
+        <br />
+
+      </form>
+    </div>
+  </div>
+  <script type="text/javascript">
+    const title = document.getElementById("title");
+    const author = document.getElementById("author");
+    const price = document.getElementById("price");
+    const img = document.getElementById("img");
+    const imessage = document.getElementById("message");
+
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      validateInputs();
+    });
+
+    const setError = (element, message) => {
+      const inputControl = element.parentElement;
+      const errorDisplay = inputControl.querySelector(".error");
+
+      errorDisplay.innerText = message;
+      inputControl.classList.add("error");
+      inputControl.classList.remove("success");
+    };
+
+    const setSuccess = (element) => {
+      const inputControl = element.parentElement;
+      const errorDisplay = inputControl.querySelector(".error");
+
+      errorDisplay.innerText = "";
+      inputControl.classList.add("success");
+      inputControl.classList.remove("error");
+    };
+
+    const validateInputs = () => {
+      const titleValue = title.value.trim();
+      const authorValue = author.value.trim();
+      const priceValue = price.value.trim();
+      const imgValue = img.value.trim();
+      const messageValue = message.value.trim();
+
+      if (titleValue === "") {
+        setError(title, "Title is required");
+      } else {
+        setSuccess(title);
+      }
+
+      if (authorValue === "") {
+        setError(author, "Author is required");
+      } else {
+        setSuccess(author);
+      }
+
+      if (priceValue === "") {
+        setError(price, "Price is required");
+      } else {
+        setSuccess(price);
+      }
+
+      if (imgValue === "") {
+        setError(img, "URL of image is required");
+      } else {
+        setSuccess(img);
+      }
+      if (messageValue === "") {
+        setError(message, "Please enter short description");
+      } else {
+        setSuccess(message);
+      }
+
+    };
+  </script>
+</body>
+<style>
+  table,
+  td,
+  th {
+    border: 1px solid rgb(233, 226, 226);
+    border-collapse: collapse;
+    text-align: left;
+    padding: 8px;
+  }
+
+
+  table {
+    width: 100%;
+
+  }
+
+  th {
+    font-weight: 700px !important;
+    font-size: 1.5rem;
+  }
+
+  tr:nth-child(even) {
+    background-color: #958c90;
+    color: black;
+  }
+
+  tr:nth-child(odd) {
+    color: white;
+  }
+
+  #createButton {
+
+    float: left;
+    margin-bottom: 10px;
+    height: 50px;
+    width: 100px;
+    font-size: 25px;
+  }
+</style>
+
+<style>
+footer {
+  font-family: var(--secondfont);
+  background-color: rgba(20, 19, 19, 0.644);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: whitesmoke;
+  text-align: center;
+  font-size: small;
+}
+</style>
+<footer>&copy; Copyright 2021. All Rights Reserved by Lambton.</footer>
+
+</html>
